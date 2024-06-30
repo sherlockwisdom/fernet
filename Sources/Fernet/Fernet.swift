@@ -98,15 +98,15 @@ public struct Fernet {
     }
 }
 
-extension Fernet {
+public extension Fernet {
     /// Errors encountered while processing the fernet key.
-    public enum KeyError: Error {
+    enum KeyError: Error {
         case invalidFormat
         case invalidLength
     }
 
     /// Errors encountered while decoding data.
-    public enum DecodingError: Error {
+    enum DecodingError: Error {
         case aesError(any Error)
         case hmacError(any Error)
         case invalidTokenFormat
@@ -116,14 +116,14 @@ extension Fernet {
     }
 
     /// Errors encountered while encoding data.
-    public enum EncodingError: Error {
+    enum EncodingError: Error {
         case aesError(any Error)
         case hmacError(any Error)
         case invalidIV
     }
 
     /// Decoding result.
-    public struct DecodeOutput {
+    struct DecodeOutput {
         /// Decoded data.
         var data: Data
         /// A boolean indicating if HMAC verification was successful.
