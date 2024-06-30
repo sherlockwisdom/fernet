@@ -123,11 +123,11 @@ public extension Fernet {
     }
 
     /// Decoding result.
-    public struct DecodeOutput {
+    struct DecodeOutput {
         /// Decoded data.
-        var data: Data
+        public var data: Data
         /// A boolean indicating if HMAC verification was successful.
-        var hmacSuccess: Bool
+        public var hmacSuccess: Bool
     }
 }
 
